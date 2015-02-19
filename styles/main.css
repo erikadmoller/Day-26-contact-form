@@ -4,6 +4,22 @@
 	padding: 2em;
 }
 
+.name h3 {
+	color: red;
+}
+
+.email h3 {
+	color: red;
+}
+
+.website h3 {
+	color: red;
+}
+
+.message h3 {
+	color: red;
+}
+
 .sminput-box {
 	width: 100%;
 	height: 2em;

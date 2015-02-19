@@ -14,11 +14,6 @@
         <script type="text/javascript" src="scripts/my-app/app.js"></script>
         <script type="text/javascript" src="scripts/controllers/controllers.js"></script>
         
-        <div ng-controller="loadingCtrl">
-
-            <div class="submitted-successfully" ng-show="sumbitPage">
-                <h1>Your form as been successfully submitted</h1>
-            </div>
 
             <div class="wrapper">
 
@@ -26,39 +21,48 @@
                     <h1>Contact Us</h1>
                 </header>
 
-                <form ng-submit="submit(user)">
+                <form ng-controller="loadingCtrl" ng-hide="submitPage" ng-submit="submit()">
                     <div class="name">
-                        <p>Name</p>
+                        <h2>Name</h2>
                         <input type="text" class="sminput-box" ng-model="userName" placeholder="First Name" name="Name">
-                        <div ng-show="noName">Name cannot be left empty</div>
+                        <h3 ng-bind="noNameError"></h3>
+                       <!--  <div ng-show="noName">Name cannot be left empty</div> -->
                     </div>
 
                     <div class="email">
-                        <p>Email</p>
-                        <input type="email" class="sminput-box" ng-model="userEmail" placeholder="Email" name="Email">
-                        <div ng-show="noEmail">Email cannot be left empty</div>
-                        <div ng-show="noAtSymbol">Email must contain an '@'</div>
+                        <h2>Email</h2>
+                        <input type="text" class="sminput-box" ng-model="userEmail" placeholder="Email" name="Email">
+                        <h3 ng-bind="noEmailError"></h3>
+                        <h3 ng-bind="noAtSignError"></h3>
+                       <!--  <div ng-show="noEmail">Email cannot be left empty</div>
+                        <div ng-show="noAtSymbol">Email must contain an '@'</div> -->
                     </div>
                     
                     <div class="website">
-                        <p>Website</p>
-                        <input type="text" class="sminput-box" ng-model="user.website" placeholder="Website" name="Website">
-                        <div ng-show="noWebsite">Website cannot be left empty</div>
-                        <div ng-show="noHttp">Website must start with http://</div>
+                        <h2>Website</h2>
+                        <input type="text" class="sminput-box" ng-model="userWebsite" placeholder="Website" name="Website">
+                        <h3 ng-bind="noWebError"></h3>
+                        <!-- <div ng-show="noWebsite">Website cannot be left empty</div>
+                        <div ng-show="noHttp">Website must start with http://</div> -->
                     </div>
 
                     <div class="message">
-                        <p>Message</p>
-                        <input type="text" class="lginput-box" ng-model="user.message" placeholder="A friendly message..." name="Message">
-                        <div ng-show="noMessage">Message cannot be left empty</div>
+                        <h2>Message</h2>
+                        <input type="text" class="lginput-box" ng-model="userMessage" placeholder="A friendly message..." name="Message">
+                        <h3 ng-bind="noMessageError"></h3>
+                        <!-- <div ng-show="noMessage">Message cannot be left empty</div> -->
                     </div>
 
                     <button class="submit-button" ng-click="submitForm()">Submit</button>
                 </form>  
 
+                <div class="submitted-successfully" ng-show="sumbitPage">
+                <h1>Your form as been successfully submitted</h1>
             </div>
 
-        </div>
+            </div>
+
+  
 
         <!-- ng-bind acts as a template that goes between element tags -->
 
