@@ -1,7 +1,7 @@
 angular.module('basic.controllers', []) 
 .controller('loadingCtrl', function($scope) {
 
-	$scope.sumbitPage = true;
+	$scope.sumbitPage = false;
 
 	$scope.submitForm = function() {
 
